@@ -108,6 +108,44 @@ skill-rules.json       关键词/意图/文件/内容模式匹配 → 自动激�
 
 ---
 
+## 智能自动化系统
+
+三层自动化体系，从被动响应到主动执行。
+
+### Layer 1：触发式钩子（事件驱动）
+
+两个钩子注册在 `.claude/settings.json`，在关键事件点自动执行：
+
+| 钩子 | 事件 | 作用 |
+|---|---|---|
+| `constitutional-guard.sh` | UserPromptSubmit | 检测用户输入中的技能关键词，注入相关技能建议和宪法原则提醒 |
+| `quality-gate.sh` | PostToolUse | 文件修改后检查是否遗留无关注释、是否保持手术式修改 |
+
+### Layer 2：Slash 审计命令（显式调用）
+
+通过 `disable-model-invocation: true` 设为手动调用：
+
+| 命令 | 作用 |
+|---|---|
+| `/constitutional-audit` | 对当前改动执行 Karpathy 四条原则合规审计 |
+| `/auto-scan` | 自动检测变更文件类型，映射到相关技能并输出行动建议 |
+
+### Layer 3：Cowork 自动编排（自主执行）
+
+在 Cowork 模式下（`current-mode.txt` 含 "cowork"），`auto-orchestrator` 接管：
+
+- 检测 `git diff` 中的变更文件类型
+- .ts/.tsx → `evaluating-code-clarity`
+- .tsx + React imports → `building-react-next`
+- .test/.spec → `testing-full-pyramid`
+- Dockerfile/compose → `containerizing-environments`
+- .sql/prisma → `designing-database-schemas`
+- .vue → `composing-vue-apps`
+
+变更 > 5 文件时自动建议 `/auto-scan full`，发现宪法违规时自动运行 `/constitutional-audit`。
+
+---
+
 ## Code / Cowork 双模式系统
 
 你可以在两种模式间切换，切换方式是说"切换到code模式"或"切换到cowork模式"。

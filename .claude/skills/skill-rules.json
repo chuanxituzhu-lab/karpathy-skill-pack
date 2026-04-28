@@ -199,6 +199,41 @@
                     "model\\s+\\w+\\s+\\{"
                 ]
             }
+        },
+
+        "constitutional-audit": {
+            "type": "guardrail",
+            "enforcement": "suggest",
+            "priority": "critical",
+            "description": "Audit recent code against Karpathy's 4 constitutional principles. Checks for unnecessary complexity, naming violations, scope creep, and missing goal definitions. Invoked via /constitutional-audit or auto-triggered on refactor/rewrite operations.",
+            "promptTriggers": {
+                "keywords": [
+                    "constitutional audit", "karpathy audit", "principle check",
+                    "合规检查", "宪法审计",
+                    "refactor", "rewrite", "redesign"
+                ],
+                "intentPatterns": [
+                    "(audit|check|verify).*?(principle|constitutional|karpathy)",
+                    "(refactor|rewrite|redesign).*?(check|audit|verify)"
+                ]
+            }
+        },
+
+        "auto-orchestrator": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Intelligent automation orchestrator. Coordinates the 6 skills based on detected file changes. Invoked via /auto-scan. In cowork mode, auto-executes quality gates after significant file changes.",
+            "promptTriggers": {
+                "keywords": [
+                    "auto scan", "auto orchestrate", "skill orchestration",
+                    "automation", "自动扫描", "自动化编排"
+                ],
+                "intentPatterns": [
+                    "(scan|orchestrate|coordinate).*?(skill|change|file)",
+                    "(run|execute).*?(all|full).*?(audit|check|scan)"
+                ]
+            }
         }
     },
 

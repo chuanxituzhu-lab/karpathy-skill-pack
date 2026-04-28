@@ -1,6 +1,6 @@
 # Karpathy Skill Pack
 
-**6 orthogonal skills distilled from 14 candidates using Karpathy first-principles methodology.**
+**8 skills (6 domain + 2 automation) distilled from 14 candidates using Karpathy first-principles methodology.**
 
 A Claude Code skill collection that follows Andrej Karpathy's programming philosophy: think before coding, simplicity first, surgical changes, goal-driven execution.
 
@@ -14,17 +14,30 @@ A Claude Code skill collection that follows Andrej Karpathy's programming philos
 | 4 | **testing-full-pyramid** | testing-patterns + e2e-testing-patterns | Unit → Integration → E2E testing |
 | 5 | **containerizing-environments** | docker-essentials + docker-compose | Docker / Compose workflow |
 | 6 | **designing-database-schemas** | database-designer (standalone) | Schema design / indexing / migrations |
+| 7 | **constitutional-audit** 🛡️ | New — automation | Karpathy principle compliance audit |
+| 8 | **auto-orchestrator** 🤖 | New — automation | Skill orchestration + cowork auto-pilot |
 
 ## Architecture
 
 ```
 14 Raw Skills
   └─ Distillation (Karpathy principles + Negentropy)
-      ├─ 6 Merged Skills  ← you are here
-      ├─ 1 Demoted        → gitcommit-helper (single CLAUDE.md rule)
-      └─ 2 Discarded      → ui-ux-pro-max (100% overlap)
-                           → typescript-mastery (content absorbed into skill #1)
+      ├─ 6 Domain Skills    ← knowledge layer
+      ├─ 2 Automation Skills ← execution layer (new)
+      ├─ 1 Demoted          → gitcommit-helper (single CLAUDE.md rule)
+      └─ 2 Discarded        → ui-ux-pro-max (100% overlap)
+                             → typescript-mastery (content absorbed into skill #1)
 ```
+
+## Automation System
+
+Three-layer intelligent automation:
+
+| Layer | Mechanism | Trigger |
+|-------|-----------|---------|
+| 1. Hooks | `constitutional-guard.sh` + `quality-gate.sh` | UserPromptSubmit / PostToolUse |
+| 2. Slash Commands | `/constitutional-audit` + `/auto-scan` | Manual invocation |
+| 3. Cowork Auto-Pilot | `auto-orchestrator` skill | Cowork mode + file change detection |
 
 ### Intelligent Scheduling
 
