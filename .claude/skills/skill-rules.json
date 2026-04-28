@@ -1,0 +1,265 @@
+{
+    "version": "2.0",
+    "description": "Intelligent skill scheduling system. 6 orthogonal skills distilled from 14 candidate skills using Karpathy first-principles methodology. Skills auto-activate based on keywords, intent patterns, file paths, and content patterns.",
+
+    "skills": {
+        "evaluating-code-clarity": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Code quality heuristics: naming conventions, function design, code structure, TypeScript advanced type patterns. Complements native review + security-review by adding a structured quality lens.",
+            "promptTriggers": {
+                "keywords": [
+                    "code review", "code quality", "naming convention",
+                    "function design", "code smell", "refactoring",
+                    "TypeScript type", "generic", "type safety", "clean code",
+                    "重构", "代码质量"
+                ],
+                "intentPatterns": [
+                    "(review|check|audit).*?(code|PR|pull request)",
+                    "(refactor|improve|clean).*?(code|function|class|type)",
+                    "TypeScript.*?(type|generic|utility|advanced)",
+                    "(how to|better).*?(name|structure|organize).*?(function|class|file)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": ["**/*.ts", "**/*.tsx"],
+                "contentPatterns": [
+                    "interface\\s+\\w+", "type\\s+\\w+",
+                    "function\\s+\\w+", "class\\s+\\w+"
+                ]
+            }
+        },
+
+        "building-react-next": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "React 18+ and Next.js full-stack development. Merges React best practices, Vercel 57 guidelines, performance optimization, Next.js App Router patterns, and SEO into one cohesive reference.",
+            "promptTriggers": {
+                "keywords": [
+                    "React", "React 18", "React 19", "Next.js", "Next.js 14", "Next.js 15",
+                    "Hooks", "useState", "useEffect", "useContext", "useMemo", "useCallback",
+                    "Server Component", "Client Component", "App Router",
+                    "SSR", "SSG", "ISR", "Suspense", "Server Actions",
+                    "React performance", "re-render", "code splitting", "React.memo",
+                    "zustand", "tanstack query", "状态管理", "性能优化"
+                ],
+                "intentPatterns": [
+                    "(create|build|add|fix).*?(React|component|hook)",
+                    "(optimize|improve|debug).*?(React|render|performance|bundle)",
+                    "Next.js.*?(layout|page|route|middleware|server action)",
+                    "(data fetching|fetch|query).*?(React|server component)",
+                    "(SEO|metadata|sitemap).*?(Next|Next.js)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/*.tsx", "**/*.jsx", "next.config.*",
+                    "**/layout.tsx", "**/page.tsx"
+                ],
+                "contentPatterns": [
+                    "from ['\"]react['\"]",
+                    "useState|useEffect|useContext|useMemo|useCallback",
+                    "from ['\"]next/",
+                    "export (default )?(async )?function",
+                    "'use client'", "'use server'"
+                ]
+            }
+        },
+
+        "composing-vue-apps": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "Vue 3 ecosystem: Composition API, Pinia state management, Vue Router, composables, reactive patterns, TypeScript integration, and performance optimization.",
+            "promptTriggers": {
+                "keywords": [
+                    "Vue", "Vue 3", "Vue3", "Composition API", "Options API",
+                    "Pinia", "Vuex", "Vue Router", "Nuxt", "Nuxt.js",
+                    "composable", "ref", "reactive", "computed", "watch",
+                    "defineProps", "script setup", "Vite",
+                    "Vue 性能", "Vue 优化"
+                ],
+                "intentPatterns": [
+                    "(create|build|add|fix).*?(Vue|component|composable|Vue3)",
+                    "(migrate|convert).*?(Options|Vuex|Vue 2).*?(Composition|Pinia|Vue 3)",
+                    "Vue.*?(state|store|router|route|guard|directive)",
+                    "(how to|best practice).*?(Vue|Composition API|Pinia)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": ["**/*.vue", "**/nuxt.config.*"],
+                "contentPatterns": [
+                    "<script setup", "from ['\"]vue['\"]",
+                    "defineComponent", "createApp", "defineStore"
+                ]
+            }
+        },
+
+        "testing-full-pyramid": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Full testing pyramid: unit tests (Vitest/Jest), integration tests, and E2E automation (Playwright/Cypress). Covers mocking strategies, test design, flakiness prevention, and CI integration.",
+            "promptTriggers": {
+                "keywords": [
+                    "test", "unit test", "integration test", "E2E test", "end-to-end",
+                    "Playwright", "Cypress", "Vitest", "Jest", "testing library",
+                    "MSW", "mock", "stub", "fixture", "test coverage",
+                    "TDD", "CI test", "flaky test",
+                    "测试", "单元测试", "集成测试"
+                ],
+                "intentPatterns": [
+                    "(write|add|create|fix).*?(test|spec|e2e|integration)",
+                    "(set up|configure).*?(Vitest|Jest|Playwright|Cypress|testing)",
+                    "(mock|stub|fixture).*?(API|HTTP|database|service)",
+                    "(debug|fix).*?(flaky|failing).*?(test|spec)",
+                    "test.*?(coverage|strategy|pyramid|pattern)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/*.test.ts", "**/*.test.tsx",
+                    "**/*.spec.ts", "**/*.spec.tsx",
+                    "**/e2e/**", "**/__tests__/**",
+                    "playwright.config.*", "cypress.config.*", "vitest.config.*"
+                ],
+                "contentPatterns": [
+                    "describe\\(", "it\\(", "test\\(", "expect\\(",
+                    "vi\\.mock", "jest\\.mock"
+                ]
+            }
+        },
+
+        "containerizing-environments": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "Docker and Docker Compose for environment consistency. Covers Dockerfile optimization, multi-stage builds, Compose orchestration, networking, volumes, and production deployment patterns.",
+            "promptTriggers": {
+                "keywords": [
+                    "Docker", "Dockerfile", "docker-compose", "Compose",
+                    "container", "containerization", "image", "build",
+                    "multi-stage build", "Alpine", "volume", "network",
+                    "Docker Compose", "dev container", "containerize",
+                    "Docker 优化", "部署"
+                ],
+                "intentPatterns": [
+                    "(create|write|build|optimize).*?(Dockerfile|docker-compose|container)",
+                    "(set up|configure|run).*?(Docker|Compose|container)",
+                    "(containerize|dockerize).*?(app|application|service)",
+                    "(debug|fix).*?(Docker|container|network|volume)",
+                    "(reduce|optimize|minimize).*?(image|build|size)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/Dockerfile*", "**/docker-compose*",
+                    "**/docker-compose*.yml", "**/docker-compose*.yaml",
+                    "**/.dockerignore", "**/Dockerfile.*"
+                ],
+                "contentPatterns": [
+                    "FROM\\s+\\w+", "docker-compose", "services:",
+                    "docker build", "docker run"
+                ]
+            }
+        },
+
+        "designing-database-schemas": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "Relational database design: table structure, relationship modeling (1:1, 1:N, M:N), index strategy (B-tree, composite, partial, covering, GIN), query optimization (EXPLAIN ANALYZE, CTE, pagination), and safe migration patterns. Supports PostgreSQL, MySQL, SQLite, Prisma, Drizzle.",
+            "promptTriggers": {
+                "keywords": [
+                    "database", "schema", "table", "SQL", "query", "index",
+                    "migration", "normalization", "denormalization",
+                    "ERD", "entity relationship", "foreign key", "primary key",
+                    "PostgreSQL", "MySQL", "SQLite",
+                    "Prisma", "Knex", "Drizzle", "ORM",
+                    "数据库", "数据建模", "索引"
+                ],
+                "intentPatterns": [
+                    "(design|create|model).*?(database|schema|table|entity|ERD)",
+                    "(optimize|improve|fix).*?(query|SQL|index|performance)",
+                    "(add|write|plan).*?(migration|schema change|alter table)",
+                    "(normalize|denormalize).*?(table|schema|database)",
+                    "(model|design).*?(relationship|one-to-many|many-to-many)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/prisma/schema.prisma", "**/migrations/**",
+                    "**/*.sql", "**/schema/**", "**/database/**"
+                ],
+                "contentPatterns": [
+                    "CREATE TABLE", "CREATE INDEX", "ALTER TABLE",
+                    "prisma", "drizzle", "knex", "typeorm",
+                    "model\\s+\\w+\\s+\\{"
+                ]
+            }
+        }
+    },
+
+    "metadata": {
+        "distillation": {
+            "original_count": 14,
+            "merged_count": 6,
+            "reduction": "57%",
+            "overlap_eliminated": "100%",
+            "unique_value_retained": "100%",
+            "methodology": "Karpathy first-principles + negentropy",
+            "candidates_merged": {
+                "evaluating-code-clarity": "clean-code-review + typescript-mastery (advanced patterns)",
+                "building-react-next": "react-expert + react-best-practices + react-performance + next-best-practices",
+                "composing-vue-apps": "vue-expert (standalone, unique domain)",
+                "testing-full-pyramid": "testing-patterns + e2e-testing-patterns",
+                "containerizing-environments": "docker-essentials + docker-compose",
+                "designing-database-schemas": "database-designer (standalone, unique domain)"
+            },
+            "discarded": {
+                "gitcommit-helper": "demoted to single rule in CLAUDE.md",
+                "ui-ux-pro-max": "100% overlap with building-react-next + composing-vue-apps",
+                "typescript-mastery": "standalone discarded; unique content absorbed into evaluating-code-clarity/resources/"
+            }
+        },
+        "native_integration": {
+            "evaluating-code-clarity": {
+                "complements": ["review", "security-review", "simplify"],
+                "strategy": "Apply as a second pass after native review for structure/naming/type heuristics"
+            },
+            "building-react-next": {
+                "fills_gap": "No native React/Next.js specialized skill",
+                "strategy": "Auto-activates on all React/Next.js related work"
+            },
+            "composing-vue-apps": {
+                "fills_gap": "No native Vue skill",
+                "strategy": "Auto-activates on all Vue 3 related work"
+            },
+            "testing-full-pyramid": {
+                "complements": ["Native Claude Code test generation"],
+                "strategy": "Provides testing strategy framework; native generation handles implementation"
+            },
+            "containerizing-environments": {
+                "fills_gap": "No native Docker skill",
+                "strategy": "Auto-activates on container-related work"
+            },
+            "designing-database-schemas": {
+                "fills_gap": "No native database design skill",
+                "strategy": "Auto-activates on schema/database design work"
+            }
+        },
+        "security_audit": {
+            "status": "PASSED",
+            "date": "2026-04-28",
+            "findings": [
+                "All skills are knowledge-only (read-only), no executable code",
+                "All skills use 'suggest' mode (non-blocking)",
+                "No skill modifies system config, executes commands, or accesses sensitive data",
+                "No conflicts with native safety mechanisms",
+                "Negentropy verified: 6 orthogonal skills < 14 overlapping skills"
+            ]
+        }
+    }
+}

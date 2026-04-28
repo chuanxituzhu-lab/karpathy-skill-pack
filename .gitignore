@@ -1,0 +1,20 @@
+# User-specific config
+.claude/settings.local.json
+
+# Separate project workspace
+/Claude-Cowork/
+
+# User-specific workflow modes
+.claude/skills/code-mode/
+.claude/skills/cowork-mode/
+
+# Session/state files
+.claude/current-mode.txt
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Temp / cache
+*.log
+.tmp/

@@ -1,0 +1,19 @@
+{
+  "name": "karpathy-skill-pack",
+  "version": "1.0.0",
+  "description": "6 orthogonal skills distilled from 14 candidate skills using Karpathy first-principles methodology. Covers code quality, React/Next.js, Vue 3, full testing pyramid, Docker environments, and database schema design.",
+  "skills": [
+    "evaluating-code-clarity",
+    "building-react-next",
+    "composing-vue-apps",
+    "testing-full-pyramid",
+    "containerizing-environments",
+    "designing-database-schemas"
+  ],
+  "author": {
+    "name": "karpathy-skill-pack"
+  },
+  "repository": {
+    "type": "github"
+  }
+}
