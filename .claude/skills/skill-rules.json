@@ -291,6 +291,40 @@
                     "remote-debugging-port"
                 ]
             }
+        },
+
+        "publishing-skills": {
+            "type": "guardrail",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Skill/Agent publishing governance. Originality assessment (6-dimension weighted), naming convention (gerund), competitive analysis (marketplace comparison), distillation methodology, and release checklist.",
+            "promptTriggers": {
+                "keywords": [
+                    "publish skill", "release skill", "originality",
+                    "skill naming", "skill convention", "marketplace",
+                    "distillation", "负熵", "融合型创新",
+                    "发布技能", "原创性评估", "竞争分析"
+                ],
+                "intentPatterns": [
+                    "(publish|release|distribute).*?(skill|agent|plugin)",
+                    "(create|add|new).*?(skill|agent).*?(name|call|convention)",
+                    "(originality|innovation|novel).*?(assessment|score|weight)",
+                    "(compare|compete|market).*?(skill|marketplace|existing)",
+                    "(distill|merge|combine).*?(skill|candidate|source)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/plugin.json",
+                    "**/SKILL.md",
+                    "**/skill-rules.json"
+                ],
+                "contentPatterns": [
+                    "originality", "innovation",
+                    "gerund", "naming convention",
+                    "marketplace", "publish"
+                ]
+            }
         }
     },
 

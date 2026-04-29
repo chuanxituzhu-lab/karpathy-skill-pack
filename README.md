@@ -1,6 +1,6 @@
 # Karpathy Skill Pack
 
-**10 skills (7 domain + 2 automation + 1 self-evolution) distilled from 14 candidates using Karpathy first-principles methodology.**
+**11 skills (7 domain + 3 automation + 1 self-evolution + 1 publishing) distilled from 14 candidates using Karpathy first-principles methodology.**
 
 A Claude Code skill collection that follows Andrej Karpathy's programming philosophy: think before coding, simplicity first, surgical changes, goal-driven execution.
 
@@ -18,14 +18,15 @@ A Claude Code skill collection that follows Andrej Karpathy's programming philos
 | 8 | **auto-orchestrator** 🤖 | New — automation | Skill orchestration + cowork auto-pilot |
 | 9 | **evolving-system** 🧬 | New — self-evolution | OODA loop: observe, orient, decide, act |
 | 10 | **automating-browser** 🕸️ | New — browser automation | Chrome DevTools, CDP, web scraping, E2E |
+| 11 | **publishing-skills** 📦 | New — governance | Originality assessment, naming, publishing |
 
 ## Architecture
 
 ```
 14 Raw Skills
   └─ Distillation (Karpathy principles + Negentropy)
-      ├─ 6 Domain Skills      ← knowledge layer
-      ├─ 3 Automation Skills   ← execution + evolution layer (new)
+      ├─ 7 Domain Skills      ← knowledge layer
+      ├─ 4 Special Skills      ← automation + evolution + publishing
       ├─ 1 Demoted            → gitcommit-helper (single CLAUDE.md rule)
       └─ 2 Discarded          → ui-ux-pro-max (100% overlap)
                                → typescript-mastery (content absorbed into skill #1)
@@ -63,6 +64,7 @@ Each skill auto-activates via `skill-rules.json` using a 4-dimensional trigger s
 | designing-database-schemas | — | No native DB design skill |
 | evolving-system | — | No native self-evolution system |
 | automating-browser | — | No native CDP/browser automation skill |
+| publishing-skills | — | No native publishing governance skill |
 
 ## Installation
 
@@ -97,9 +99,9 @@ cp karpathy-skill-pack/.claude/skills/skill-rules.json your-project/.claude/skil
 | **Complement Mapping** | 15% | Systematic mapping of each skill to fill gaps in Claude Code's native capabilities |
 | **Concise Implementation** | 15% | Each skill under 100 lines with progressive disclosure; zero overlap between skills |
 
-**Overall Originality: ~82%** (integrative work per IT industry classification)
+**Overall Originality: ~86%** (integrative work per IT industry classification)
 
-> This work adapts well-established domain knowledge (React, Vue, Docker, SQL, testing) but combines them through a novel distillation framework with constitutional constraints. The individual facts are known; the architecture, selection criteria, and integration methodology are original.
+> Market validation: Anthropic official (17+ skills), obra/superpowers (40.9K★), daymade (48 skills), jezweb (60+ skills), athola/claude-night-market (167 skills) — none cover: self-evolution OODA, constitutional constraint framework, or publishing governance automation. This skill pack is the first to integrate all three.
 
 ## License
 

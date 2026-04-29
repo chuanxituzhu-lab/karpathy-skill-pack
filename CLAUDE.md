@@ -98,6 +98,7 @@ skill-rules.json       关键词/意图/文件/内容模式匹配 → 自动激�
 | **testing-full-pyramid** | testing-patterns + e2e-testing-patterns | 编写测试、配置测试框架时 |
 | **containerizing-environments** | docker-essentials + docker-compose | 编写 Dockerfile/Compose 时 |
 | **designing-database-schemas** | database-designer（保留） | 设计表结构、优化查询时 |
+| **publishing-skills** 📦 | 自研（发布治理） | 创建/发布新技能时（原创性+规范性检查） |
 
 **已摒弃**：gitcommit-helper（已降级为上方单条规则）、ui-ux-pro-max（完全重叠无独特价值）、typescript-mastery（独立版，独特内容已融入 evaluating-code-clarity）
 
@@ -143,6 +144,7 @@ skill-rules.json       关键词/意图/文件/内容模式匹配 → 自动激�
 - .sql/prisma → `designing-database-schemas`
 - .vue → `composing-vue-apps`
 - .html / e2e/ → `automating-browser`
+- 新增/发布技能 → `publishing-skills`
 
 变更 > 5 文件时自动建议 `/auto-scan full`，发现宪法违规时自动运行 `/constitutional-audit`。
 
