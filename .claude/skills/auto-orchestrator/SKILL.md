@@ -43,8 +43,20 @@ In cowork mode (`.claude/current-mode.txt` contains "cowork"), auto-execute afte
 3. If `scan` mode flags a `constitutional_concern`, run `constitutional-audit`
 4. If number of changed files > 5, suggest `/auto-scan full`
 
+### Self-Evolution Integration
+
+In cowork mode, auto-orchestrator also drives the evolution loop:
+
+- Every 20 log entries in `.claude/evolution/log.jsonl` → auto-run `/evolve propose`
+- After `/constitutional-audit` finds a failure → log to evolution log
+- After applying any evolution proposal → verify and log the result
+- On `/auto-scan full` → include evolution metrics in the comprehensive report
+
+This creates a closed loop: every action feeds the evolution log, and the evolution system feeds back improved triggers and rules.
+
 ## Integration
 
 - Works with `skill-rules.json` for trigger-based activation
 - Falls back to `/constitutional-audit` for violation checks
+- Drives `/evolve` cycle from cowork mode
 - Reports results to user as actionable summaries

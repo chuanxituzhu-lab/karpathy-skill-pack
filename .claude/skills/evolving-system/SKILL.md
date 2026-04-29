@@ -16,14 +16,39 @@ Constitutional self-evolution following the OODA loop:
 
 Compute and display system health metrics from the evolution log.
 
-**Output:**
+**Dashboard Output:**
+```
+Evolution System Status
+━━━━━━━━━━━━━━━━━━━━━━
+Events: 11 total (since 2026-04-29)
+  ├─ file_edit:       10 (91%)
+  ├─ skill_suggestion: 0  (0%)
+  ├─ quality_gate:     0  (0%)
+  ├─ audit_result:     0  (0%)
+  └─ evolution_applied:0  (0%)
+
+File Type Distribution (Top 3):
+  ├─ md:  8 (73%)
+  ├─ sh:  1 (9%)
+  └─ json: 1 (9%)
+
+Skill Invocation Frequency (last 7d): No data yet
+Trigger Effectiveness: No data yet
+Quality Gate Warnings: 0 total — trend: stable
+Audit Pass Rate: No audits run yet
+Pending Proposals: 1 (P001-evolution-dashboard)
+Evolution Applied: 0
+```
+
+**Metrics computed from `.claude/evolution/log.jsonl`:**
+- Total events by type (count + % breakdown)
+- File type distribution (top 3 extensions by edit count)
 - Per-skill invocation frequency (last 7d / 30d)
-- Trigger effectiveness (hit rate per skill)
-- Quality gate warning trends
-- Constitutional audit pass rate
-- File type distribution (most-edited extensions)
+- Trigger effectiveness (hit rate per skill from skill_suggestion events)
+- Quality gate warning trends (total, per-file-type)
+- Constitutional audit pass rate (P1-P4 pass/warn/fail from audit_result events)
 - Pending proposal count
-- Evolution history (recently applied changes)
+- Evolution history (recent evolution_applied events)
 
 ### `/evolve propose`
 

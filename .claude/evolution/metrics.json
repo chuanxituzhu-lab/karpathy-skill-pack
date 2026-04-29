@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-29T00:00:00Z",
-  "total_events": 1,
+  "last_updated": "2026-04-29T01:25:30Z",
+  "total_events": 14,
   "skills": {},
   "quality_gates": {
     "total_warnings": 0,
@@ -12,6 +12,19 @@
   },
   "evolution": {
     "proposals_pending": 0,
-    "proposals_applied": 0
+    "proposals_applied": 1
+  },
+  "file_type_stats": {
+    "md": 10,
+    "json": 1,
+    "sh": 1,
+    "jsonl": 1
+  },
+  "event_breakdown": {
+    "file_edit": 12,
+    "skill_suggestion": 0,
+    "quality_gate": 0,
+    "audit_result": 0,
+    "evolution_applied": 1
   }
 }
