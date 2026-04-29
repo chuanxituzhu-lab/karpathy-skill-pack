@@ -11,7 +11,8 @@
     "designing-database-schemas",
     "constitutional-audit",
     "auto-orchestrator",
-    "evolving-system"
+    "evolving-system",
+    "automating-browser"
   ],
   "author": {
     "name": "karpathy-skill-pack"

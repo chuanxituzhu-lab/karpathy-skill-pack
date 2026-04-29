@@ -1,6 +1,6 @@
 # Karpathy Skill Pack
 
-**9 skills (6 domain + 2 automation + 1 self-evolution) distilled from 14 candidates using Karpathy first-principles methodology.**
+**10 skills (7 domain + 2 automation + 1 self-evolution) distilled from 14 candidates using Karpathy first-principles methodology.**
 
 A Claude Code skill collection that follows Andrej Karpathy's programming philosophy: think before coding, simplicity first, surgical changes, goal-driven execution.
 
@@ -17,6 +17,7 @@ A Claude Code skill collection that follows Andrej Karpathy's programming philos
 | 7 | **constitutional-audit** 🛡️ | New — automation | Karpathy principle compliance audit |
 | 8 | **auto-orchestrator** 🤖 | New — automation | Skill orchestration + cowork auto-pilot |
 | 9 | **evolving-system** 🧬 | New — self-evolution | OODA loop: observe, orient, decide, act |
+| 10 | **automating-browser** 🕸️ | New — browser automation | Chrome DevTools, CDP, web scraping, E2E |
 
 ## Architecture
 
@@ -61,6 +62,7 @@ Each skill auto-activates via `skill-rules.json` using a 4-dimensional trigger s
 | containerizing-environments | — | No native Docker skill |
 | designing-database-schemas | — | No native DB design skill |
 | evolving-system | — | No native self-evolution system |
+| automating-browser | — | No native CDP/browser automation skill |
 
 ## Installation
 

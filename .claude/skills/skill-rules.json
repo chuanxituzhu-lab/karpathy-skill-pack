@@ -254,6 +254,43 @@
                     "(proposal|suggest).*?(improve|change|update)"
                 ]
             }
+        },
+
+        "automating-browser": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Chrome DevTools browser automation via chrome-devtools-mcp. Covers CDP integration, web navigation, form interaction, screenshot capture, network debugging, and E2E testing patterns.",
+            "promptTriggers": {
+                "keywords": [
+                    "browser", "chrome", "web automation", "selenium",
+                    "CDP", "Chrome DevTools", "DevTools Protocol",
+                    "scrape", "web scrape", "crawl", "screenshot",
+                    "E2E", "end to end", "playwright", "cypress",
+                    "浏览器", "自动化测试", "爬虫"
+                ],
+                "intentPatterns": [
+                    "(open|navigate|go to).*?(url|page|website|site)",
+                    "(take|capture).*?(screenshot|snapshot)",
+                    "(scrape|extract|crawl).*?(page|site|web|data)",
+                    "(automate|control).*?(browser|chrome|page)",
+                    "(debug|inspect|monitor).*?(network|request|console)",
+                    "(fill|submit|click).*?(form|input|button)",
+                    "chrome.*?(debug|remote|devtools|protocol)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/*.html", "**/*.htm",
+                    "**/e2e/**", "**/playwright/**",
+                    "**/chrome-devtools/**"
+                ],
+                "contentPatterns": [
+                    "chrome-devtools", "chrome.debugging",
+                    "puppeteer", "playwright",
+                    "remote-debugging-port"
+                ]
+            }
         }
     },
 

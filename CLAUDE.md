@@ -94,6 +94,7 @@ skill-rules.json       关键词/意图/文件/内容模式匹配 → 自动激�
 | **evaluating-code-clarity** | clean-code-review + typescript-mastery(局部) | 审查代码/PR、讨论命名和类型时 |
 | **building-react-next** | react-expert + best-practices + performance + next-best-practices | 编写 React/Next.js 组件、优化性能时 |
 | **composing-vue-apps** | vue-expert（保留） | 编写 Vue3 组件、设计 Pinia store 时 |
+| **automating-browser** | chrome-devtools-mcp（新增） | 浏览器自动化、网页抓取、E2E 测试时 |
 | **testing-full-pyramid** | testing-patterns + e2e-testing-patterns | 编写测试、配置测试框架时 |
 | **containerizing-environments** | docker-essentials + docker-compose | 编写 Dockerfile/Compose 时 |
 | **designing-database-schemas** | database-designer（保留） | 设计表结构、优化查询时 |
@@ -141,6 +142,7 @@ skill-rules.json       关键词/意图/文件/内容模式匹配 → 自动激�
 - Dockerfile/compose → `containerizing-environments`
 - .sql/prisma → `designing-database-schemas`
 - .vue → `composing-vue-apps`
+- .html / e2e/ → `automating-browser`
 
 变更 > 5 文件时自动建议 `/auto-scan full`，发现宪法违规时自动运行 `/constitutional-audit`。
 
