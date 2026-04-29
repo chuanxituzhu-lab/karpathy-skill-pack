@@ -20,6 +20,15 @@ MCP server (already installed):
 claude mcp add chrome-devtools npx chrome-devtools-mcp@latest
 ```
 
+## Screenshot Storage
+
+All screenshots captured via browser automation are saved to:
+```
+E:/声像/图片/Claude code/
+```
+
+Naming convention: `{page-title-or-url}-{YYYY-MM-DD}.png`
+
 ## Automation Patterns
 
 ### Navigation & Page Control
