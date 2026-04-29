@@ -1,6 +1,6 @@
 {
   "name": "karpathy-skill-pack",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "8 skills (6 domain + 2 automation) distilled from 14 candidates using Karpathy first-principles. Covers code clarity, React/Next.js, Vue 3, testing pyramid, Docker environments, database design, constitutional audit, and auto-orchestration.",
   "skills": [
     "evaluating-code-clarity",
@@ -10,7 +10,8 @@
     "containerizing-environments",
     "designing-database-schemas",
     "constitutional-audit",
-    "auto-orchestrator"
+    "auto-orchestrator",
+    "evolving-system"
   ],
   "author": {
     "name": "karpathy-skill-pack"

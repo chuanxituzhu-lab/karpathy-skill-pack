@@ -146,6 +146,46 @@ skill-rules.json       关键词/意图/文件/内容模式匹配 → 自动激�
 
 ---
 
+## 第四层：自进化系统（OODA 闭环）
+
+系统能够自我观察、分析和改进，形成完整的 OODA 闭环。
+
+### 架构
+
+```
+观察 (Observe)    ← experience-logger.sh + constitutional-guard.sh 记录事件
+定向 (Orient)     ← /evolve status 计算指标、分析趋势
+决策 (Decide)     ← /evolve propose 生成改进提案
+行动 (Act)        ← /evolve apply 应用提案到系统自身
+```
+
+### 事件日志
+
+所有事件存储在 `.claude/evolution/log.jsonl`：
+- `file_edit` — 文件修改记录（扩展名、工具、路径）
+- `skill_suggestion` — 技能激活记录（匹配的关键词、技能名）
+- `quality_gate` — 质量门禁警告
+- `audit_result` — 宪法审计结果
+- `evolution_applied` — 已应用的演进变更
+
+### Slash 命令
+
+| 命令 | 作用 |
+|---|---|
+| `/evolve status` | 显示系统健康度指标：技能调用频率、触发器命中率、质量趋势 |
+| `/evolve propose` | 分析日志生成改进提案（30天未使用的技能→降级；频繁编辑但无匹配的文件类型→添加触发器） |
+| `/evolve apply <id>` | 应用指定提案（自动备份被修改的文件） |
+
+### 自进化约束
+
+自进化必须遵守 Karpathy 四原则：
+1. **先思考** — 每个提案必须说明观察结果和推理过程
+2. **简洁优先** — 先移除无用技能/触发器，再添加新的
+3. **外科手术** — 每个提案只改一件事，绝不捆绑
+4. **目标驱动** — 每个提案定义成功标准，应用后验证
+
+---
+
 ## Code / Cowork 双模式系统
 
 你可以在两种模式间切换，切换方式是说"切换到code模式"或"切换到cowork模式"。

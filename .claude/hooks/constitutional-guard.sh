@@ -38,6 +38,9 @@ fi
 if [ -n "$SKILL_HINTS" ]; then
   echo "[Constitutional Guard] Relevant skills detected:$SKILL_HINTS"
   echo "Use /constitutional-audit for explicit Karpathy principle check."
+  # Log to evolution system
+  TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+  echo "{\"type\":\"skill_suggestion\",\"ts\":\"$TIMESTAMP\",\"session\":\"$SESSION_ID\",\"skills\":\"$SKILL_HINTS\"}" >> ".claude/evolution/log.jsonl" 2>/dev/null || true
 fi
 
 # Constitutional reminders for high-risk operations

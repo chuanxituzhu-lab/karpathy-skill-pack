@@ -234,6 +234,26 @@
                     "(run|execute).*?(all|full).*?(audit|check|scan)"
                 ]
             }
+        },
+
+        "evolving-system": {
+            "type": "guardrail",
+            "enforcement": "suggest",
+            "priority": "critical",
+            "description": "Self-evolution engine. Analyzes experience logs, generates improvement proposals, and applies system-level optimizations. Invoked via /evolve.",
+            "promptTriggers": {
+                "keywords": [
+                    "evolve", "evolution", "self-evolution", "self improve",
+                    "system improve", "optimize system", "skill evolve",
+                    "进化", "自我进化", "系统优化"
+                ],
+                "intentPatterns": [
+                    "(evolve|improve|optimize).*?(system|skill|trigger|pattern)",
+                    "(self.?evolve|self.?improve|auto.?improve)",
+                    "(analyze|review).*?(usage|pattern|metric|log)",
+                    "(proposal|suggest).*?(improve|change|update)"
+                ]
+            }
         }
     },
 

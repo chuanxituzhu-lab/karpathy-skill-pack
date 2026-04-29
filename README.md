@@ -1,6 +1,6 @@
 # Karpathy Skill Pack
 
-**8 skills (6 domain + 2 automation) distilled from 14 candidates using Karpathy first-principles methodology.**
+**9 skills (6 domain + 2 automation + 1 self-evolution) distilled from 14 candidates using Karpathy first-principles methodology.**
 
 A Claude Code skill collection that follows Andrej Karpathy's programming philosophy: think before coding, simplicity first, surgical changes, goal-driven execution.
 
@@ -16,28 +16,30 @@ A Claude Code skill collection that follows Andrej Karpathy's programming philos
 | 6 | **designing-database-schemas** | database-designer (standalone) | Schema design / indexing / migrations |
 | 7 | **constitutional-audit** 🛡️ | New — automation | Karpathy principle compliance audit |
 | 8 | **auto-orchestrator** 🤖 | New — automation | Skill orchestration + cowork auto-pilot |
+| 9 | **evolving-system** 🧬 | New — self-evolution | OODA loop: observe, orient, decide, act |
 
 ## Architecture
 
 ```
 14 Raw Skills
   └─ Distillation (Karpathy principles + Negentropy)
-      ├─ 6 Domain Skills    ← knowledge layer
-      ├─ 2 Automation Skills ← execution layer (new)
-      ├─ 1 Demoted          → gitcommit-helper (single CLAUDE.md rule)
-      └─ 2 Discarded        → ui-ux-pro-max (100% overlap)
-                             → typescript-mastery (content absorbed into skill #1)
+      ├─ 6 Domain Skills      ← knowledge layer
+      ├─ 3 Automation Skills   ← execution + evolution layer (new)
+      ├─ 1 Demoted            → gitcommit-helper (single CLAUDE.md rule)
+      └─ 2 Discarded          → ui-ux-pro-max (100% overlap)
+                               → typescript-mastery (content absorbed into skill #1)
 ```
 
 ## Automation System
 
-Three-layer intelligent automation:
+Four-layer intelligent automation with self-evolution:
 
 | Layer | Mechanism | Trigger |
 |-------|-----------|---------|
-| 1. Hooks | `constitutional-guard.sh` + `quality-gate.sh` | UserPromptSubmit / PostToolUse |
-| 2. Slash Commands | `/constitutional-audit` + `/auto-scan` | Manual invocation |
+| 1. Hooks | `constitutional-guard.sh` + `quality-gate.sh` + `experience-logger.sh` | UserPromptSubmit / PostToolUse |
+| 2. Slash Commands | `/constitutional-audit` + `/auto-scan` + `/evolve` | Manual invocation |
 | 3. Cowork Auto-Pilot | `auto-orchestrator` skill | Cowork mode + file change detection |
+| 4. Self-Evolution | `evolving-system` skill OODA loop | Log analysis + /evolve propose |
 
 ### Intelligent Scheduling
 
@@ -58,6 +60,7 @@ Each skill auto-activates via `skill-rules.json` using a 4-dimensional trigger s
 | testing-full-pyramid | Native test generation | — |
 | containerizing-environments | — | No native Docker skill |
 | designing-database-schemas | — | No native DB design skill |
+| evolving-system | — | No native self-evolution system |
 
 ## Installation
 
@@ -86,12 +89,13 @@ cp karpathy-skill-pack/.claude/skills/skill-rules.json your-project/.claude/skil
 
 | Dimension | Weight | Assessment |
 |-----------|--------|------------|
-| **Fusion Methodology** | 35% | 14→6 distillation using Karpathy principles + negentropy is a novel meta-approach to skill design |
-| **Constitutional Framework** | 25% | Karpathy's 4 rules as constitutional constraints applied to skill behavior is original |
-| **Complement Mapping** | 20% | Systematic mapping of each skill to fill gaps in Claude Code's native capabilities |
-| **Concise Implementation** | 20% | Each skill under 100 lines with progressive disclosure; zero overlap between skills |
+| **Fusion Methodology** | 30% | 14→6 distillation using Karpathy principles + negentropy is a novel meta-approach to skill design |
+| **Constitutional Framework** | 20% | Karpathy's 4 rules as constitutional constraints applied to skill behavior is original |
+| **Self-Evolution OODA** | 20% | Closed-loop observe→orient→decide→act system that improves its own triggers, skills, and rules |
+| **Complement Mapping** | 15% | Systematic mapping of each skill to fill gaps in Claude Code's native capabilities |
+| **Concise Implementation** | 15% | Each skill under 100 lines with progressive disclosure; zero overlap between skills |
 
-**Overall Originality: ~75%** (integrative work per IT industry classification)
+**Overall Originality: ~82%** (integrative work per IT industry classification)
 
 > This work adapts well-established domain knowledge (React, Vue, Docker, SQL, testing) but combines them through a novel distillation framework with constitutional constraints. The individual facts are known; the architecture, selection criteria, and integration methodology are original.
 

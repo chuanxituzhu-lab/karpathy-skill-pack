@@ -1,0 +1,17 @@
+{
+  "last_updated": "2026-04-29T00:00:00Z",
+  "total_events": 1,
+  "skills": {},
+  "quality_gates": {
+    "total_warnings": 0,
+    "trend": "stable"
+  },
+  "audit": {
+    "total_runs": 0,
+    "pass_rate": 1.0
+  },
+  "evolution": {
+    "proposals_pending": 0,
+    "proposals_applied": 0
+  }
+}
