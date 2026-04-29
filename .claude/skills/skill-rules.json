@@ -201,6 +201,45 @@
             }
         },
 
+        "extracting-image-text": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "medium",
+            "description": "Free open-source OCR using EasyOCR, PaddleOCR, and Tesseract. Covers image text extraction, multi-language OCR, structured document parsing, table extraction, and scanned PDF workflows. All recommended tools are Apache 2.0 licensed.",
+            "promptTriggers": {
+                "keywords": [
+                    "OCR", "optical character recognition", "extract text",
+                    "text recognition", "image to text", "scan document",
+                    "scanned PDF", "text from image", "read image text",
+                    "文字识别", "OCR识别", "图片转文字", "扫描识别",
+                    "EasyOCR", "PaddleOCR", "Tesseract", "pytesseract",
+                    "document scanning", "receipt OCR", "invoice OCR",
+                    "ocr-pipeline"
+                ],
+                "intentPatterns": [
+                    "(extract|read|recognize|get).*?(text|character|word).*?(image|photo|screenshot|pic|PDF)",
+                    "(scan|ocr|digitize).*?(document|image|receipt|invoice|form|photo)",
+                    "(convert|turn).*?(image|photo|screenshot).*?(text|words)",
+                    "(识别|提取|读取).*?(文字|文本|字符).*?(图片|图像|照片|扫描)",
+                    "image.*?(text|ocr|readable)",
+                    "parse.*?(receipt|invoice|document).*?(image|photo)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "**/*.png", "**/*.jpg", "**/*.jpeg",
+                    "**/*.tiff", "**/*.tif", "**/*.bmp",
+                    "**/scans/**", "**/ocr/**",
+                    "**/ocr-pipeline.py"
+                ],
+                "contentPatterns": [
+                    "easyocr", "paddleocr", "pytesseract",
+                    "from PIL import Image",
+                    "ocr\\.", "readtext\\("
+                ]
+            }
+        },
+
         "constitutional-audit": {
             "type": "guardrail",
             "enforcement": "suggest",

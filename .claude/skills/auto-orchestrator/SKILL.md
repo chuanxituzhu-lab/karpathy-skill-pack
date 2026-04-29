@@ -1,13 +1,13 @@
 ---
 name: auto-orchestrator
-description: Intelligent automation orchestrator. Coordinates the 6 skills based on detected file changes and project state. Invoked automatically in cowork mode or manually via /auto-scan.
+description: Intelligent automation orchestrator. Coordinates the 7 skills based on detected file changes and project state. Invoked automatically in cowork mode or manually via /auto-scan.
 argument-hint: [scan | audit | full]
 disable-model-invocation: true
 ---
 
 # Auto Orchestrator
 
-Intelligent automation that coordinates the 6 skills based on detected file changes.
+Intelligent automation that coordinates the 7 skills based on detected file changes.
 
 ## Modes
 
@@ -30,6 +30,7 @@ Run the relevant skill(s) against changed files.
 - `Dockerfile`/`compose` changes → `containerizing-environments`
 - `.sql`/`prisma/`/`schema` changes → `designing-database-schemas`
 - `.vue` changes → `composing-vue-apps`
+- `.png` `.jpg` `.jpeg` `.tiff` `.bmp` changes → `extracting-image-text`
 
 ### `full` (Comprehensive)
 Run all applicable skills across the entire project.
